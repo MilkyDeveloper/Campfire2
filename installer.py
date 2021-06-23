@@ -71,4 +71,4 @@ urllib.request.urlretrieve('https://github.com/sebanc/brunch/raw/master/mbr_supp
 os.system('tar xvf brunch_mbr.tar.gz')
 
 # Finally, run the script to generate the bootable image
-os.system('sudo bash chromeos-install.sh -src recovery.bin -dst BrunchChromeOS.img')
+os.system('sudo bash chromeos-install.sh -src recovery.bin -dst BrunchChromeOS.bin')
