@@ -7,7 +7,7 @@ import json
 import zipfile
 
 # Install pv, tar, cgpt, and sgdisk (all dependencies for brunch)
-os.system('sudo apt update -y && sudo apt install pv tar cgpt gdisk -y')
+os.system('crew install gptfdisk pv cgpt')
 
 # Variables
 latestBrunchReleaseJSON = json.loads(urllib.request.urlopen('https://api.github.com/repos/sebanc/brunch-unstable/releases').read())
