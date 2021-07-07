@@ -22,6 +22,11 @@ https://user-images.githubusercontent.com/48262994/124794415-9bbb1080-df14-11eb-
 | Suspending/Resuming | No (sommelier does not persist when suspending)     | Yes                            | Yes                                            |
 | KVM Virtualization  | Yes                                                 | Yes                            | No (Not available on all chromebooks and slow) |
 
+## Performance
+Campfire2 and Crouton's performance are similar. The only reason to change from Crouton are Quality-of-Life improvements and maintenance. Basically, Campfire2 has the performance of Crouton but the reliability and GUI (known as Sommelier) of Crostini.
+
+Crostini gets around ~17.5 FPS on default Minecraft using the (still very impressive!) VirGL drivers. On the other hand, using `i965` and Mesa gives ~25 fps. Chromebooks released in 2019 can utilize a newer kernel and the new Gallium3d drivers, which would probably offer around ~30 fps.
+
 # Installing Campfire2
 1. Install Chromebrew: `curl -Ls git.io/vddgY | bash`
 2. Download/extract/configure the Ubuntu (20.04) Chroot:
