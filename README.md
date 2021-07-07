@@ -14,7 +14,7 @@ https://user-images.githubusercontent.com/48262994/124794415-9bbb1080-df14-11eb-
 | Touchpad            | Yes                                                 | Mostly                         | Yes                                            |
 | Touchscreen         | Yes                                                 | Mostly                         | Yes                                            |
 | WiFi                | Yes                                                 | Yes                            | Yes                                            |
-| 3D Acceleration     | Yes, but with a 16% performance dropoff in GLXGears | Mostly                         | Yes (but using slower VirGL)                   |
+| 3D Acceleration     | Yes (Can be used for gaming!)                       | Mostly                         | Yes (but using slower VirGL)                   |
 | Audio               | Mostly                                              | Mostly                         | Mostly                                         |
 | Camera              | Yes                                                 | Yes                            | Yes                                            |
 | Microphone          | No                                                  | Sometimes                      | Yes                                            |
