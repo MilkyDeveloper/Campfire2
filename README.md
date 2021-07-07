@@ -1,7 +1,10 @@
-Welcome to the Campfire2 Project! Campfire2 is more modern than Crouton, more flexible than Crostini, and uses Chromebrew, a wonderful package manager for ChromeOS.
-
+<kbd>
 
 https://user-images.githubusercontent.com/48262994/124794415-9bbb1080-df14-11eb-850e-be174740472b.mp4
+
+<h1 align="center">🔥</h1>
+
+</kbd>
 
 # Installing Campfire2
 1. Install Chromebrew: `curl -Ls git.io/vddgY | bash`
