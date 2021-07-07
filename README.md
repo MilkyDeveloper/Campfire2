@@ -6,6 +6,22 @@ https://user-images.githubusercontent.com/48262994/124794415-9bbb1080-df14-11eb-
 
 </kbd>
 
+# About Campfire2
+| Hardware Support    | Campfire2                                           | Crouton                        | Crostini                                       |
+|---------------------|-----------------------------------------------------|--------------------------------|------------------------------------------------|
+| Internal Display    | Yes                                                 | Yes (sommelier is not working) | Yes                                            |
+| External Display    | Yes                                                 | Mostly                         | Yes                                            |
+| Touchpad            | Yes                                                 | Mostly                         | Yes                                            |
+| Touchscreen         | Yes                                                 | Mostly                         | Yes                                            |
+| WiFi                | Yes                                                 | Yes                            | Yes                                            |
+| 3D Acceleration     | Yes, but with a 16% performance dropoff in GLXGears | Mostly                         | Yes (but using slower VirGL)                   |
+| Audio               | Mostly                                              | Mostly                         | Mostly                                         |
+| Camera              | Yes                                                 | Yes                            | Yes                                            |
+| Microphone          | No                                                  | Sometimes                      | Yes                                            |
+| USB                 | Yes                                                 | Yes                            | No direct USB Access                           |
+| Suspending/Resuming | No (sommelier does not persist when suspending)     | Yes                            | Yes                                            |
+| KVM Virtualization  | Yes                                                 | Yes                            | No (Not available on all chromebooks and slow) |
+
 # Installing Campfire2
 1. Install Chromebrew: `curl -Ls git.io/vddgY | bash`
 2. Download/extract/configure the Ubuntu (20.04) Chroot:
