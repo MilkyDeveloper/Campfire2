@@ -1,10 +1,4 @@
-<kbd>
-
 https://user-images.githubusercontent.com/48262994/124794415-9bbb1080-df14-11eb-850e-be174740472b.mp4
-
-<h1 align="center">🔥</h1>
-
-</kbd>
 
 # About Campfire2
 | Hardware Support    | Campfire2                                           | Crouton                        | Crostini                                       |
@@ -31,26 +25,9 @@ Crostini gets around ~17.5 FPS on default Minecraft using the (still very impres
 1. Install Chromebrew: `curl -Ls git.io/vddgY | bash`
 2. Download/extract/configure the Ubuntu (20.04) Chroot:
 ```
-crew install micro xterm xhost libunwind && echo "Downloading Ubuntu RootFS..." && curl --verbose -o /usr/local/ubuntu.tar.xz "https://cloud-images.ubuntu.com/minimal/releases/focal/release-20210625/ubuntu-20.04-minimal-cloudimg-amd64-root.tar.xz" && sudo rm -rf /usr/local/ubuntu; mkdir /usr/local/ubuntu && sudo tar -xvf /usr/local/ubuntu.tar.xz -C /usr/local/ubuntu && sudo rm /usr/local/ubuntu.tar.xz /usr/local/ubuntu/etc/resolv.conf && sudo mkdir /usr/local/ubuntu/root/Downloads && sudo cp /etc/resolv.conf /usr/local/ubuntu/etc/resolv.conf && sudo curl https://raw.githubusercontent.com/MilkyDeveloper/Campfire2/main/startubuntu -o /usr/local/bin/startubuntu && startsommelier && echo "Done!"
+crew install micro xterm xhost libunwind && echo "Downloading Ubuntu RootFS..." && curl --verbose -o /usr/local/ubuntu.tar.xz "https://cloud-images.ubuntu.com/minimal/releases/focal/release-20210625/ubuntu-20.04-minimal-cloudimg-amd64-root.tar.xz" && sudo rm -rf /usr/local/ubuntu; mkdir /usr/local/ubuntu && sudo tar -xvf /usr/local/ubuntu.tar.xz -C /usr/local/ubuntu && sudo rm /usr/local/ubuntu.tar.xz /usr/local/ubuntu/etc/resolv.conf && sudo mkdir /usr/local/ubuntu/root/Downloads && sudo cp /etc/resolv.conf /usr/local/ubuntu/etc/resolv.conf && sudo curl https://raw.githubusercontent.com/MilkyDeveloper/Campfire2/main/startubuntu -o /usr/local/bin/startubuntu && sudo chmod 755 /usr/local/bin/startubuntu && startsommelier && echo "Done!"
 ```
-3. Make a command to start Ubuntu: `sudo micro /usr/local/bin/startubuntu` and paste in (<kbd>CTRL</kbd> <kbd>SHIFT</kbd> <kbd>V</kbd>):
-```
-#!/bin/bash
-xhost + > /dev/null
-mount -t proc /proc /usr/local/ubuntu/proc/
-mount --rbind /sys /usr/local/ubuntu/sys/
-mount --rbind /dev /usr/local/ubuntu/dev/
-if [ -z "$1" ]
-then
-      DISPLAY=:0 chroot /usr/local/ubuntu /bin/bash
-else
-      DISPLAY=:0 chroot /usr/local/ubuntu /bin/bash “$@”
-fi
-umount -lf /usr/local/ubuntu/proc/
-umount -lf /usr/local/ubuntu/sys/
-umount -lf /usr/local/ubuntu/dev/
-```  
-Save it with <kbd>CTRL</kbd> <kbd>Q</kbd> and make it executable by running: `sudo chmod +x /usr/local/bin/startubuntu`. Run `sudo startubuntu` to start the chroot.
+Run `sudo startubuntu` to start the chroot.
 
 ## Extras
 ### Audio
