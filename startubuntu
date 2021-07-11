@@ -1,0 +1,14 @@
+#!/bin/bash
+xhost + > /dev/null
+mount -t proc /proc /usr/local/ubuntu/proc/
+mount --rbind /sys /usr/local/ubuntu/sys/
+mount --rbind /dev /usr/local/ubuntu/dev/
+if [ -z "$1" ]
+then
+      DISPLAY=:0 chroot /usr/local/ubuntu /bin/bash
+else
+      DISPLAY=:0 chroot /usr/local/ubuntu /bin/bash “$@”
+fi
+umount -lf /usr/local/ubuntu/proc/
+umount -lf /usr/local/ubuntu/sys/
+umount -lf /usr/local/ubuntu/dev/
