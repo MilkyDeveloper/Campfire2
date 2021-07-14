@@ -1,5 +1,5 @@
 #!/bin/bash
-DISPLAY=:0 xhost + > /dev/null
+sudo DISPLAY=:0 LD_LIBRARY_PATH=/usr/local/lib64 xhost + > /dev/null
 mount -t proc /proc /usr/local/ubuntu/proc/
 mount --rbind /sys /usr/local/ubuntu/sys/
 mount --rbind /dev /usr/local/ubuntu/dev/
