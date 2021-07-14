@@ -36,7 +36,7 @@ Run `sudo startubuntu` to start the chroot.
 1. Verify 3d Acceleration is not working: `glxinfo -B | grep Device:` (If it returns `LLVMPipe`, 3d Acceleration is not working. Otherwise, 3d Acceleration is already working.)
 2. Use i965 instead of Gallium3d/Iris: `echo -e "# Fix 3d Acceleration on Kernel 4.4\nexport MESA_LOADER_DRIVER_OVERRIDE=i965" >> ~/.bashrc && source ~/.bashrc`
 
-Run `glxinfo -b` again and search for LLVMPipe. It should be gone and replaced with i965 🎉.
+Run `glxinfo -b` again and search for LLVMPipe. It should be gone and replaced with `Mesa DRI Intel(R) UHD Graphics` 🎉.
 
 ### Audio
 1. <kbd><img height="15" width="75" src="https://assets.ubuntu.com/v1/048f7fde-ubuntu_black-orange_hex.jpg"></img></kbd> Install Pulseaudio and Apulse: `apt update && apt upgrade && apt install alsa alsa-tools apulse`
