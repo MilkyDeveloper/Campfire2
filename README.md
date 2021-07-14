@@ -30,6 +30,14 @@ crew install xterm xhost libunwind && echo "Downloading Ubuntu RootFS..." && cur
 Run `sudo startubuntu` to start the chroot.
 
 ## Extras
+### 3d Acceleration
+3d Acceleration under the chroot requires a few steps. This is because Google ships a kernel made in 2016 on some flagship chromebooks.
+0. Install MESA: `sudo apt update && sudo apt install mesa-utils`
+1. Verify 3d Acceleration is not working: `glxinfo -B | grep Device:` (If it returns `LLVMPipe`, 3d Acceleration is not working. Otherwise, 3d Acceleration is already working.)
+2. echo -e "# Fix 3d Acceleration on Kernel 4.4\nexport MESA_LOADER_DRIVER_OVERRIDE=i965" >> ~/.bashrc; source ~/.bashrc
+
+Run `glxinfo -b` again and search for LLVMPipe. It should be gone and replaced with i965 🎉.
+
 ### Audio
 1. <kbd><img height="15" width="75" src="https://assets.ubuntu.com/v1/048f7fde-ubuntu_black-orange_hex.jpg"></img></kbd> Install Pulseaudio and Apulse: `apt update && apt upgrade && apt install alsa alsa-tools apulse`
 2. Run `speaker-test` (you may need to run it twice for it to work)
