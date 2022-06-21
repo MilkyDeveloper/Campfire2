@@ -1,3 +1,5 @@
+> This project has been deprecated in favor of another project of mine, [Breath](https://github.com/milkydeveloper/cb-linux). All future work will be done there. However, there is nothing stopping Campfire2 fom still working as an alternative to the older Crouton.
+
 https://user-images.githubusercontent.com/48262994/124794415-9bbb1080-df14-11eb-850e-be174740472b.mp4
 
 # About Campfire2
@@ -25,7 +27,7 @@ Crostini gets around ~17.5 FPS on default Minecraft using the (still very impres
 1. Install Chromebrew: `sudo rm -rf /usr/local > /dev/null; curl -Ls git.io/vddgY | bash`
 2. Download/extract/configure the Ubuntu (20.04) Chroot:
 ```
-crew install xterm xhost libunwind && echo "Downloading Ubuntu RootFS..." && curl --verbose -o /usr/local/ubuntu.tar.xz "https://cloud-images.ubuntu.com/minimal/releases/focal/release-20210625/ubuntu-20.04-minimal-cloudimg-amd64-root.tar.xz" && sudo rm -rf /usr/local/ubuntu; mkdir /usr/local/ubuntu && sudo tar -xvf /usr/local/ubuntu.tar.xz -C /usr/local/ubuntu && sudo rm /usr/local/ubuntu.tar.xz /usr/local/ubuntu/etc/resolv.conf && sudo mkdir /usr/local/ubuntu/root/Downloads && sudo cp /etc/resolv.conf /usr/local/ubuntu/etc/resolv.conf && sudo curl https://raw.githubusercontent.com/MilkyDeveloper/Campfire2/main/startubuntu -o /usr/local/bin/startubuntu && sudo chmod 755 /usr/local/bin/startubuntu && startsommelier && echo "Done! Run sudo startubuntu to start the chroot."
+crew install xterm xhost libunwind && echo "Downloading Ubuntu RootFS..." && curl --verbose -o /usr/local/ubuntu.tar.xz "https://cloud-images.ubuntu.com/minimal/releases/jammy/release/ubuntu-22.04-minimal-cloudimg-amd64-root.tar.xz" && sudo rm -rf /usr/local/ubuntu; mkdir /usr/local/ubuntu && sudo tar -xvf /usr/local/ubuntu.tar.xz -C /usr/local/ubuntu && sudo rm /usr/local/ubuntu.tar.xz /usr/local/ubuntu/etc/resolv.conf && sudo mkdir /usr/local/ubuntu/root/Downloads && sudo cp /etc/resolv.conf /usr/local/ubuntu/etc/resolv.conf && sudo curl https://raw.githubusercontent.com/MilkyDeveloper/Campfire2/main/startubuntu -o /usr/local/bin/startubuntu && sudo chmod 755 /usr/local/bin/startubuntu && startsommelier && echo "Done! Run sudo startubuntu to start the chroot."
 ```
 Run `sudo startubuntu` to start the chroot.
 
