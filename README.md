@@ -61,4 +61,4 @@ Run `glxinfo -b` again and search for LLVMPipe. It should be gone and replaced w
    ```
 4. Run `speaker-test` (you may need to run it twice for it to work)
 
-PulseAudio is complicated and is often considered bloated. A tool called Apulse is a much better alternative, creating a compatibility layer between PulseAudio libraries and ALSA. 99% of PulseAudio apps will work with Apulse. You can use Apulse by putting `apulse` before your command.
+PulseAudio is complicated and is often considered bloated. A tool called Apulse is a much better alternative, creating a compatibility layer between PulseAudio libraries and ALSA. 99% of PulseAudio apps will work with Apulse. Apulse is automatically used; no special invocation is needed.
