@@ -44,6 +44,21 @@ Run `glxinfo -b` again and search for LLVMPipe. It should be gone and replaced w
 
 ### Audio
 1. <kbd><img height="15" width="75" src="https://assets.ubuntu.com/v1/048f7fde-ubuntu_black-orange_hex.jpg"></img></kbd> Install Pulseaudio and Apulse: `apt update && apt upgrade && apt install alsa alsa-tools apulse`
-2. Run `speaker-test` (you may need to run it twice for it to work)
+2. ```
+   # Replace PulseAudio libraries with Apulse, which makes PulseAudio apps work with ALSA
+   for lib in libpulse-mainloop-glib.so libpulse-simple.so libpulse.so; do
+
+       set +e
+      sudo rm -f /usr/lib/${lib} /usr/lib/${lib}.0 /usr/lib/x86_64-linux-gnu/${lib} /usr/lib/x86_64-linux-gnu/${lib}.0
+       set -e
+
+      sudo ln -s /usr/lib/x86_64-linux-gnu/apulse/${lib}   "/usr/lib/${lib}"
+      sudo ln -s /usr/lib/x86_64-linux-gnu/apulse/${lib}.0 "/usr/lib/${lib}.0"
+      sudo ln -s /usr/lib/x86_64-linux-gnu/apulse/${lib}   "/usr/lib/x86_64-linux-gnu/${lib}"
+      sudo ln -s /usr/lib/x86_64-linux-gnu/apulse/${lib}.0 "/usr/lib/x86_64-linux-gnu/${lib}.0"
+
+   done
+   ```
+4. Run `speaker-test` (you may need to run it twice for it to work)
 
 PulseAudio is complicated and is often considered bloated. A tool called Apulse is a much better alternative, creating a compatibility layer between PulseAudio libraries and ALSA. 99% of PulseAudio apps will work with Apulse. You can use Apulse by putting `apulse` before your command.
