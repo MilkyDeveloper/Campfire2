@@ -34,8 +34,10 @@ Run `sudo startubuntu` to start the chroot.
 ## Extras
 ### 3d Acceleration
 3d Acceleration under the chroot requires a few steps. This is because Google ships a kernel made in 2016 on some flagship chromebooks.
+
 0. Install MESA: `sudo apt update && sudo apt install mesa-utils`
-1. Verify 3d Acceleration is not working: `glxinfo -B | grep Device:` (If it returns `LLVMPipe`, 3d Acceleration is not working. Otherwise, 3d Acceleration is already working.)
+1. Verify 3d Acceleration is not working: `glxinfo -B | grep Device:`
+   - If it returns `LLVMPipe`, 3d Acceleration is not working. Otherwise, 3d Acceleration is already working and you can stop following this section.)
 2. Use i965 instead of Gallium3d/Iris: `echo -e "# Fix 3d Acceleration on Kernel 4.4\nexport MESA_LOADER_DRIVER_OVERRIDE=i965" >> ~/.bashrc && source ~/.bashrc`
 
 Run `glxinfo -b` again and search for LLVMPipe. It should be gone and replaced with `Mesa DRI Intel(R) UHD Graphics` 🎉.
